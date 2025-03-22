@@ -1,9 +1,8 @@
-
 import Card from "./Card";
 
 const PopularLocations = () => {
   const data = [
-    { image: "/assets/berlin.jpg", city: "Delhi", numOfPlaces: 73 },
+    { image: "/assets/delhi.jpg", city: "Delhi", numOfPlaces: 73 },
     { image: "/assets/berlin.jpg", city: "Berlin", numOfPlaces: 34 },
     { image: "/assets/paris.jpg", city: "Paris", numOfPlaces: 52 },
     { image: "/assets/dubai.jpg", city: "Dubai", numOfPlaces: 27 },
