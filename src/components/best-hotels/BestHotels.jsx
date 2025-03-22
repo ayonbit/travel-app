@@ -1,18 +1,10 @@
-// Assets Import
-import image_1 from "../../../public/assets/hr_1.jpg";
-import image_2 from "../../../public/assets/hr_2.jpg";
-import image_3 from "../../../public/assets/hr_3.jpg";
-import image_4 from "../../../public/assets/hr_4.jpg";
-import image_5 from "../../../public/assets/hr_5.jpg";
-import image_6 from "../../../public/assets/hr_6.jpg";
-import image_7 from "../../../public/assets/hr_7.jpg";
 
 // Components
 import Card from "./Card";
 const data = [
   {
     name: "Arabian Paradise",
-    image: image_1,
+    image: "/assets/hr_1.jpg",
     price: 324.5,
     category: "Luxury",
     reviews: 4.7,
@@ -20,7 +12,7 @@ const data = [
   },
   {
     name: "Palm Oasis Resort",
-    image: image_2,
+    image: "/assets/hr_2.jpg",
     price: 289.0,
     category: "Premium",
     reviews: 4.5,
@@ -28,7 +20,7 @@ const data = [
   },
   {
     name: "Golden Sands Retreat",
-    image: image_3,
+    image: "/assets/hr_3.jpg",
     price: 310.2,
     category: "Luxury",
     reviews: 4.6,
@@ -36,7 +28,7 @@ const data = [
   },
   {
     name: "Skyline Elegance",
-    image: image_4,
+    image: "/assets/hr_4.jpg",
     price: 450.0,
     category: "Ultra Luxury",
     reviews: 4.9,
@@ -44,7 +36,7 @@ const data = [
   },
   {
     name: "Seaside Bliss Hotel",
-    image: image_5,
+    image: "/assets/hr_5.jpg",
     price: 270.3,
     category: "Coastal",
     reviews: 4.4,
@@ -52,7 +44,7 @@ const data = [
   },
   {
     name: "The Royal Palace",
-    image: image_6,
+    image: "/assets/hr_6.jpg",
     price: 599.99,
     category: "Luxury",
     reviews: 5.0,
@@ -60,7 +52,15 @@ const data = [
   },
   {
     name: "Urban Skyline Tower",
-    image: image_7,
+    image: "/assets/hr_7.jpg",
+    price: 390.75,
+    category: "Modern",
+    reviews: 4.8,
+    location: "Riyadh, Saudi Arabia",
+  },
+  {
+    name: "Urban Skyline Tower",
+    image: "/assets/hr_7.jpg",
     price: 390.75,
     category: "Modern",
     reviews: 4.8,

@@ -1,15 +1,12 @@
-import Berlin from "../../../public/assets/berlin.jpg";
-import Delhi from "../../../public/assets/delhi.jpg";
-import Dubai from "../../../public/assets/dubai.jpg";
-import Paris from "../../../public/assets/paris.jpg";
+
 import Card from "./Card";
 
 const PopularLocations = () => {
   const data = [
-    { image: Delhi, city: "Delhi", numOfPlaces: 73 },
-    { image: Berlin, city: "Berlin", numOfPlaces: 34 },
-    { image: Paris, city: "Paris", numOfPlaces: 52 },
-    { image: Dubai, city: "Dubai", numOfPlaces: 27 },
+    { image: "/assets/berlin.jpg", city: "Delhi", numOfPlaces: 73 },
+    { image: "/assets/berlin.jpg", city: "Berlin", numOfPlaces: 34 },
+    { image: "/assets/paris.jpg", city: "Paris", numOfPlaces: 52 },
+    { image: "/assets/dubai.jpg", city: "Dubai", numOfPlaces: 27 },
   ];
 
   return (

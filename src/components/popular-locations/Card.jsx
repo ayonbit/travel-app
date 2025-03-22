@@ -14,6 +14,7 @@ const Card = ({ place }) => {
           alt={`${place.city} Image`}
           fill
           className="object-cover rounded-tl-xl rounded-tr-xl"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
         <div className="absolute right-0 bottom-0 capitalize p-3 bg-blue-700 text-white rounded-tl-xl font-semibold">
           {place.city}

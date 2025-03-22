@@ -16,6 +16,7 @@ const Card = ({ place }) => {
           fill
           className="rounded-t-xl object-cover"
           alt={place.name}
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
         <div className="absolute right-0 bottom-0 p-3 bg-blue-700 text-white rounded-tl-xl text-sm font-semibold">
           {place.location}
