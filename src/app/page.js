@@ -19,7 +19,7 @@ export default function Home() {
       <PopularLocations />
       <Hero
         image={hotel_image}
-        mainHeader="Get the best offer for your hotel !"
+        mainHeader="Get the best offer for your hotel!"
         secondaryHeader="Pick your desired place"
       />
       <BestHotels />

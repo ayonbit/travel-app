@@ -6,12 +6,14 @@ import Navbar from "../navbar/Navbar";
 
 const LayoutProvider = ({ children }) => {
   const pathname = usePathname();
+  const authPages = ["/login", "/signup"];
+  const isAuthPage = authPages.includes(pathname);
 
   return (
     <>
-      {pathname !== "/login" && pathname !== "/signup" && <Navbar />}
+      {!isAuthPage && <Navbar />}
       {children}
-      {pathname !== "/login" && pathname !== "/signup" && <Footer />}
+      {!isAuthPage && <Footer />}
     </>
   );
 };
