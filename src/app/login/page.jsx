@@ -71,7 +71,7 @@ const Login = () => {
               className="w-full border border-slate-400 py-2 px-4 rounded-md outline-none focus:border-slate-600"
               type="email"
               placeholder="John@gmail.com"
-              register={register("email")}
+              {...register("email", { required: "Email is required" })}
             />
             {errors.email && (
               <p className="text-red-500 text-sm mt-1">
@@ -86,7 +86,7 @@ const Login = () => {
               className="w-full border border-slate-400 py-2 px-4 rounded-md outline-none focus:border-slate-600"
               type="password"
               placeholder="Enter Your Password"
-              register={register("password")}
+              {...register("password", { required: "Password is required" })}
             />
             {errors.password && (
               <p className="text-red-500 text-sm mt-1">

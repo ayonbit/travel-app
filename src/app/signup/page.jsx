@@ -68,7 +68,7 @@ const SignupPage = () => {
               className="w-full border border-slate-400 py-2 px-4 rounded-md outline-none focus:border-slate-600"
               type="text"
               placeholder="john123"
-              register={register("username")}
+              {...register("username", { required: "Username is required" })}
             />
             {errors.username && (
               <p className="text-red-500 text-sm mt-1">
@@ -83,7 +83,7 @@ const SignupPage = () => {
               className="w-full border border-slate-400 py-2 px-4 rounded-md outline-none focus:border-slate-600"
               type="email"
               placeholder="demo@demo.com"
-              register={register("email")}
+              {...register("email", { required: "Email is required" })}
             />
             {errors.email && (
               <p className="text-red-500 text-sm mt-1">
@@ -98,7 +98,7 @@ const SignupPage = () => {
               className="w-full border border-slate-400 py-2 px-4 rounded-md outline-none focus:border-slate-600"
               type="password"
               placeholder="Ie:Demo#123"
-              register={register("password")}
+              {...register("password", { required: "Password is required" })}
             />
             {errors.password && (
               <p className="text-red-500 text-sm mt-1">
