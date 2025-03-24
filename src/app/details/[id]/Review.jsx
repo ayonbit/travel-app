@@ -1,34 +1,39 @@
+import { format } from "date-fns";
 import Image from "next/image";
 import { AiFillStar } from "react-icons/ai";
-//image assets
 
-import avatar from "../../../../public/assets/avatar_1.png";
-
-const Review = () => {
+const Review = ({ review }) => {
   return (
-    <div className="mt-8 md:mt-16 flex flex-col gap-6 md:gap-24 w-full md:w-1/2 lg:w-1/3">
-      <div className="w-full flex flex-col md:flex-row gap-4">
-        <div className="w-14 h-14">
-          <Image
-            className="w-full h-full object-cover rounded-full"
-            src={avatar}
-            alt="customerProfile"
-          />
-        </div>
-        <div className="flex flex-col">
-          <h3 className="font-semibold text-[18px] md:text-[20px]">Ayon Bit</h3>
-          <span className="text-slate-700 text-sm md:text-base">
-            2 hours ago
-          </span>
-          <div className="mt-2 md:mt-4 text-slate-800 text-sm md:text-base">
-            Best Hotel In Dubai!
-          </div>
-        </div>
-        <span className="mt-2 md:mt-0 ml-auto flex items-center gap-2 text-sm md:text-base">
-          5
-          <AiFillStar size={20} color="rgb(59, 130, 246)" />
-        </span>
+    <div className="w-full flex flex-wrap sm:flex-nowrap gap-4 p-4 border border-gray-300 rounded-lg shadow-md">
+      {/* User Avatar */}
+      <div className="w-12 h-12 sm:w-14 sm:h-14">
+        <Image
+          height="56"
+          width="56"
+          className="w-full h-full object-cover rounded-full"
+          src={"/assets/avatar_1.png"}
+          alt="review person"
+        />
       </div>
+
+      {/* Review Content */}
+      <div className="flex-1 min-w-0">
+        <h3 className="font-semibold text-lg sm:text-xl truncate">
+          {review.username || "Anonymous Review"}
+        </h3>
+        <span className="text-sm text-gray-600 block">
+          {format(new Date(review.createdAt), "MMM do yyyy")}
+        </span>
+        <p className="mt-2 text-gray-800 text-sm sm:text-base break-words">
+          {review.text}
+        </p>
+      </div>
+
+      {/* Star Rating */}
+      <span className="flex items-center gap-1 text-sm sm:text-base text-gray-700">
+        {review.stars}
+        <AiFillStar size={20} color="rgb(59, 130, 246)" />
+      </span>
     </div>
   );
 };

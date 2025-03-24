@@ -4,14 +4,18 @@ import { DateRangePicker } from "react-date-range";
 import "react-date-range/dist/styles.css";
 import "react-date-range/dist/theme/default.css";
 
+import Button from "@/ui/Button";
 import { format } from "currency-formatter";
 import { useState } from "react";
 import { AiOutlineClose } from "react-icons/ai";
+import { redirectToCheckout } from "./service";
 
 const BookModal = ({ handleHideModal }) => {
+  const [isLoading, setIsLoading] = useState(false);
+
   const [dateRange, setDateRange] = useState([
     new Date(),
-    new Date(new Date().setDate(new Date().getDate() + 1)), // Ensure 1 day is counted
+    new Date(new Date().setDate(new Date().getDate() + 1)), 
   ]);
 
   const selectionRange = {
@@ -29,10 +33,21 @@ const BookModal = ({ handleHideModal }) => {
         Math.ceil(
           (new Date(endDate).getTime() - new Date(startDate).getTime()) /
             (1000 * 60 * 60 * 24)
-        ) + 1 // Fix: Ensure last day is counted
+        ) + 1
       );
     }
     return 1;
+  };
+  const handlePayment = async () => {
+    setIsLoading(true);
+    const startDate = dateRange[0];
+    const endDate = dateRange[1];
+
+    const daysDifference = calcDaysDiff();
+
+    await redirectToCheckout(listing, startDate, endDate, daysDifference);
+
+    setIsLoading(false);
   };
 
   return (
@@ -83,9 +98,12 @@ const BookModal = ({ handleHideModal }) => {
 
         {/* Submit Button */}
         <div className="w-full flex items-center mt-4">
-          <button className="w-full sm:w-3/4 mx-auto cursor-pointer rounded-lg py-2 px-5 text-base sm:text-lg text-white bg-blue-500 transition hover:bg-blue-600">
-            Submit
-          </button>
+          <Button
+            onClick={handlePayment}
+            disabled={isLoading}
+            label="Submit"
+            className="w-full sm:w-3/4 mx-auto cursor-pointer rounded-lg py-2 px-5 text-base sm:text-lg text-white bg-blue-500 transition hover:bg-blue-600"
+          />
         </div>
       </div>
     </div>

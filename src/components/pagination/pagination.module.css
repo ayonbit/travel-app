@@ -1,0 +1,92 @@
+.pagination {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent; /* Removed solid background */
+  height: auto;
+  width: 100%;
+  user-select: none;
+  flex-wrap: wrap;
+  padding: 8px 0;
+  gap: 6px;
+}
+
+.item {
+  margin: 0 4px;
+  padding: 6px 10px;
+  background-color: #e0e7ff; /* Soft blue */
+  color: #3b82f6;
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 6px;
+  border: 1px solid #a5b4fc;
+  transition: all 0.2s ease-in-out;
+}
+
+.item:hover {
+  background-color: #dbeafe;
+  color: #2563eb;
+}
+
+/* Active Page Styling */
+.active {
+  background-color: #3b82f6;
+  color: white;
+  font-weight: 600;
+  transform: scale(1.05);
+  border: none;
+}
+
+/* Navigation Buttons */
+.nextArrow,
+.previousArrow {
+  padding: 6px 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: #e0e7ff;
+  color: #3b82f6;
+  border: 1px solid #a5b4fc;
+  transition: all 0.2s ease-in-out;
+}
+
+.nextArrow:hover,
+.previousArrow:hover {
+  background-color: #dbeafe;
+  color: #2563eb;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .pagination {
+    padding: 6px;
+    gap: 5px;
+  }
+
+  .item {
+    padding: 5px 8px;
+    font-size: 12px;
+  }
+
+  .nextArrow,
+  .previousArrow {
+    padding: 5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .item {
+    padding: 4px 6px;
+    font-size: 10px;
+  }
+
+  .nextArrow,
+  .previousArrow {
+    padding: 4px;
+  }
+}
